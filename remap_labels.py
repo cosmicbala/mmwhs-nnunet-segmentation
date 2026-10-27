@@ -20,7 +20,6 @@ for f in label_files:
     arr = sitk.GetArrayFromImage(img)
     values = set(np.unique(arr).tolist())
 
-    # Se o ficheiro já só tem valores de 0 a 7, já foi remapeado: não mexer
     if values <= NEW_VALUES:
         print(f"  {f.name} -> já remapeado, ignorado")
         continue
